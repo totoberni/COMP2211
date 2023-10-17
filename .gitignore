@@ -1,0 +1,6 @@
+/.idea/
+/out/
+/2_month_BIGFILE/
+/dashboard.db
+/target/
+*.db

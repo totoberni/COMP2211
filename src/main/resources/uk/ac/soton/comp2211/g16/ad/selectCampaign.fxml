@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<SplitPane dividerPositions="0.29797979797979796" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="uk.ac.soton.comp2211.g16.ad.SelectCampaignController">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+         <children>
+            <GridPane layoutX="3.0" layoutY="6.0" prefHeight="168.0" prefWidth="175.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <HBox fx:id="menu_recent" alignment="CENTER_LEFT" onMouseClicked="#onMenuRecentClick" opacity="0.72" prefHeight="50.0" prefWidth="144.0">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <children>
+                        <Line fx:id="blueBarRecent" endX="30.71481704711914" endY="43.68466567993164" fill="#185abc" opacity="0.7" startX="30.714744567871094" startY="0.7917686700820923" stroke="#185abc" strokeWidth="5.0" />
+                        <Label fx:id="menuTextRecent" prefHeight="44.0" prefWidth="148.0" text="    Recent" textFill="#185abc">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets left="-2.0" />
+                     </padding>
+                  </HBox>
+                  <HBox fx:id="menu_openFolder" alignment="CENTER_LEFT" onMouseClicked="#onMenuOpenFolderClick" opacity="0.72" prefHeight="50.0" prefWidth="144.0" GridPane.rowIndex="1">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <children>
+                        <Line fx:id="blueBarOpenFolder" endX="30.71481704711914" endY="43.68466567993164" fill="#185abc" opacity="0.7" startX="30.714744567871094" startY="0.7917686700820923" stroke="#185abc" strokeWidth="5.0" visible="false" />
+                        <Label fx:id="menuTextOpenFolder" prefHeight="44.0" prefWidth="155.0" text="    Open Folder" textFill="#565759">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets left="-2.0" />
+                     </padding>
+                  </HBox>
+                  <HBox fx:id="menu_openFiles" alignment="CENTER_LEFT" onMouseClicked="#onMenuOpenFilesClick" opacity="0.72" prefHeight="50.0" prefWidth="175.0" GridPane.rowIndex="2">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <children>
+                        <Line fx:id="blueBarOpenFiles" endX="30.71481704711914" endY="43.68466567993164" fill="#185abc" opacity="0.7" startX="30.714744567871094" startY="0.7917686700820923" stroke="#185abc" strokeWidth="5.0" visible="false" />
+                        <Label fx:id="menuTextOpenFiles" prefHeight="44.0" prefWidth="134.0" text="    Open Files" textFill="#565759">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets left="-2.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </GridPane>
+         </children></AnchorPane>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+         <children>
+            <TabPane fx:id="TabPaneMenu" prefHeight="398.0" prefWidth="418.0" side="LEFT" tabClosingPolicy="UNAVAILABLE" translateX="-30.0">
+              <tabs>
+                <Tab text="Recent">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="421.0">
+                           <children>
+                              <ListView fx:id="ListView_recent" layoutX="22.0" layoutY="50.0" prefHeight="243.0" prefWidth="367.0" />
+                              <Label layoutX="7.0" layoutY="14.0" text="Select your recently opened data to load:">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Button layoutX="220.0" layoutY="333.0" mnemonicParsing="false" onAction="#recentBtnClick" prefHeight="50.0" prefWidth="169.0" text="Load">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="Folder">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="409.0">
+                           <children>
+                              <Label layoutX="28.0" layoutY="21.0" text="Please select data folder to load:">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="txt_folder" layoutX="32.0" layoutY="64.0" prefHeight="23.0" prefWidth="258.0">
+                                 <font>
+                                    <Font name="Arial" size="14.0" />
+                                 </font>
+                              </TextField>
+                              <Button layoutX="298.0" layoutY="64.0" mnemonicParsing="false" onMouseClicked="#onBtn_browseFolderClick" prefHeight="23.0" prefWidth="92.0" text="Browse">
+                                 <font>
+                                    <Font name="Arial" size="14.0" />
+                                 </font>
+                              </Button>
+                              <Label layoutX="27.0" layoutY="168.0" prefHeight="15.0" prefWidth="367.0" text="Please note: folder need contain three csv file">
+                                 <font>
+                                    <Font name="Arial" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lbl_clickFolderFilePass" layoutX="27.0" layoutY="184.0" prefHeight="15.0" prefWidth="367.0" text="1. click_log.csv                                ✓Found" textFill="#549e3b" visible="false">
+                                 <font>
+                                    <Font name="Arial" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lbl_impressionFolderFilePass" layoutX="27.0" layoutY="200.0" prefHeight="15.0" prefWidth="367.0" text="2. impression_log.csv                      ✓Found" textFill="#549e3b" visible="false">
+                                 <font>
+                                    <Font name="Arial" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lbl_serverFolderFilePass" layoutX="27.0" layoutY="216.0" prefHeight="15.0" prefWidth="367.0" text="3. server_log.csv                             ✖NOT FOUND" textFill="RED" visible="false">
+                                 <font>
+                                    <Font name="Arial" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lbl_loadFolderTips" layoutX="11.0" layoutY="254.0" prefHeight="44.0" prefWidth="386.0" text="Not enough files found, check the directory.                        You can also use &quot;Open Files&quot; to import each file individually." textFill="RED" visible="false" wrapText="true">
+                                 <font>
+                                    <Font name="Arial" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Button layoutX="220.0" layoutY="333.0" mnemonicParsing="false" onAction="#folderBtnClick" prefHeight="50.0" prefWidth="169.0" text="Load">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Button>
+                              <ProgressBar fx:id="loadFolderProgressBar" layoutX="22.0" layoutY="349.0" prefHeight="18.0" prefWidth="175.0" progress="0.0" visible="false" />
+                              <Label layoutX="28.0" layoutY="115.0" text="Name:">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="txt_campaignName" layoutX="82.0" layoutY="113.0" prefHeight="26.0" prefWidth="206.0" promptText="Preferred Name">
+                                 <font>
+                                    <Font name="Arial" size="14.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                  <Tab text="Files">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Button layoutX="220.0" layoutY="333.0" mnemonicParsing="false" onAction="#fileBtnClick" prefHeight="50.0" prefWidth="169.0" text="Load">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Button>
+                              <TextField fx:id="txt_clickLogLocation" layoutX="22.0" layoutY="112.0" prefHeight="23.0" prefWidth="258.0">
+                                 <font>
+                                    <Font name="Arial" size="14.0" />
+                                 </font>
+                              </TextField>
+                              <Button layoutX="288.0" layoutY="112.0" mnemonicParsing="false" onMouseClicked="#onBtn_browseClickLogClick" prefHeight="23.0" prefWidth="92.0" text="Browse">
+                                 <font>
+                                    <Font name="Arial" size="14.0" />
+                                 </font>
+                              </Button>
+                              <Label layoutX="22.0" layoutY="86.0" text="Please select click_log.csv:">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="txt_impressionLogLocation" layoutX="22.0" layoutY="190.0" prefHeight="23.0" prefWidth="258.0">
+                                 <font>
+                                    <Font name="Arial" size="14.0" />
+                                 </font>
+                              </TextField>
+                              <Button layoutX="288.0" layoutY="190.0" mnemonicParsing="false" onMouseClicked="#onBtn_browseImpressionLogClick" prefHeight="23.0" prefWidth="92.0" text="Browse">
+                                 <font>
+                                    <Font name="Arial" size="14.0" />
+                                 </font>
+                              </Button>
+                              <Label layoutX="22.0" layoutY="164.0" text="Please select impression_log.csv:">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lbl_clickFilePass" layoutX="22.0" layoutY="138.0" prefHeight="15.0" prefWidth="367.0" text="✓ Check pass" textFill="#549e3b" visible="false">
+                                 <font>
+                                    <Font name="Arial" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lbl_impressionFilePass" layoutX="22.0" layoutY="216.0" prefHeight="15.0" prefWidth="367.0" text="✓ Check pass" textFill="#549e3b" visible="false">
+                                 <font>
+                                    <Font name="Arial" size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="txt_serverLogLocation" layoutX="22.0" layoutY="267.0" prefHeight="23.0" prefWidth="258.0">
+                                 <font>
+                                    <Font name="Arial" size="14.0" />
+                                 </font>
+                              </TextField>
+                              <Button layoutX="288.0" layoutY="267.0" mnemonicParsing="false" onMouseClicked="#onBtn_browseServerLogClick" prefHeight="23.0" prefWidth="92.0" text="Browse">
+                                 <font>
+                                    <Font name="Arial" size="14.0" />
+                                 </font>
+                              </Button>
+                              <Label layoutX="22.0" layoutY="241.0" text="Please select server_log.csv:">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lbl_serverFilePass" layoutX="22.0" layoutY="293.0" prefHeight="15.0" prefWidth="367.0" text="✓ Check pass" textFill="#549e3b" visible="false">
+                                 <font>
+                                    <Font name="Arial" size="14.0" />
+                                 </font>
+                              </Label>
+                              <ProgressBar fx:id="loadFilesProgressBar" layoutX="22.0" layoutY="349.0" prefHeight="18.0" prefWidth="175.0" progress="0.0" visible="false" />
+                              <Label layoutX="22.0" layoutY="33.0" text="Name:">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="txt_campaignName1" layoutX="76.0" layoutY="31.0" prefHeight="26.0" prefWidth="205.0" promptText="Preferred Name">
+                                 <font>
+                                    <Font name="Arial" size="14.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+         </children></AnchorPane>
+  </items>
+</SplitPane>
